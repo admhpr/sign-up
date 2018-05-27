@@ -1,37 +1,17 @@
-// creates dummy data
-const faker = require("faker");
-const mysql = require("mysql");
 const env = process.env.NODE_ENV || "development";
 const config = require("./config")[env];
+const Db = require("./helpers/Db");
 
 let params = {
+  connectionLimit: 100, //important
   host: config.database["host"],
   user: config.creds["user"],
   password: config.creds["password"],
   database: config.database["db"]
 };
 
-const con = mysql.createConnection(params);
+let db = new Db(params);
 
-con.connect();
+db.testConnection();
 
-// testing connection
-// var q = "SELECT COUNT(*) AS total FROM users ";
-// con.query(q, (err, res, fields) => {
-//   if (err) {
-//     throw err;
-//     return;
-//   }
-//   console.log(res[0].total);
-// });
-
-var q = "SELECT COUNT(*) AS total FROM users ";
-con.query(q, (err, res, fields) => {
-  if (err) {
-    throw err;
-    return;
-  }
-  console.log(res[0].total);
-});
-
-con.end();
+db.populateUsersTable(500);

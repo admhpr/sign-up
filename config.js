@@ -10,8 +10,6 @@ const creds = {
 
 const config = {
   development: {
-    //url to be used in link generation
-    url: "",
     database: {
       host: e.DEV_DB_HOST || e.DB_HOST,
       port: e.DEV_DB_PORT || e.DB_PORT,
@@ -25,8 +23,6 @@ const config = {
     creds: creds
   },
   production: {
-    //url to be used in link generation
-    url: "",
     database: {
       host: e.DB_HOST,
       port: e.DB_PORT,
