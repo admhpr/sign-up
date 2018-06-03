@@ -1,19 +1,19 @@
 import React from "react";
 import Form from "./Form";
 
-const title = "Basic React Set Up";
+const title = "A Simple sign up form";
 
 function Title(props) {
-  return <div>{title}</div>;
+  return <h3 class="title">{title}</h3>;
 }
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <section class="container">
         <Title />
         <Form />
-      </div>
+      </section>
     );
   }
 }

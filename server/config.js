@@ -13,7 +13,9 @@ const config = {
     database: {
       host: e.DEV_DB_HOST || e.DB_HOST,
       port: e.DEV_DB_PORT || e.DB_PORT,
-      db: e.DEV_DB_NAME || e.DB_NAME
+      db: e.DEV_DB_NAME || e.DB_NAME,
+      seed: e.DEV_DB_SEED || false,
+      fakeUsers: e.DEV_DB_FAKE_USERS || 0
     },
     //server details
     server: {
@@ -26,7 +28,9 @@ const config = {
     database: {
       host: e.DB_HOST,
       port: e.DB_PORT,
-      db: e.DB_NAME
+      db: e.DB_NAME,
+      seed: false,
+      fakeUsers: 0
     },
     server: {
       host: e.SERVER_HOST,

@@ -1,0 +1,12 @@
+{
+  "/users": {
+    "post": {
+      "controller": "users",
+      "handler": "create"
+    },
+    "get": {
+      "controller": "users",
+      "handler": "index"
+    }
+  }
+}

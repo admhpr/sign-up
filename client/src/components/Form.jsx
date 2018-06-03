@@ -21,15 +21,17 @@ export default class InputForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
+        <fieldset>
+          <label>
+            Email:
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input class="button button-outline" type="submit" value="Submit" />
+        </fieldset>
       </form>
     );
   }
